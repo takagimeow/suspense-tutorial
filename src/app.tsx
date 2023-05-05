@@ -2,20 +2,24 @@ import React from "react";
 import {
   createBrowserRouter,
   RouterProvider,
-  useLoaderData,
 } from "react-router-dom";
 
 import "./index.css";
+import { HomeWithEffect, HomeWithSuspense } from "./components/Home";
 
 let router = createBrowserRouter([
   {
     path: "/",
-    loader: () => ({ message: "Hello Data Router!" }),
     Component() {
-      let data = useLoaderData() as { message: string };
-      return <h1>{data.message}</h1>;
+      return <HomeWithSuspense />
     },
   },
+  {
+    path: "/effect",
+    Component() {
+      return <HomeWithEffect />
+    }
+  }
 ]);
 
 export default function App() {
