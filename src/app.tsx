@@ -5,7 +5,7 @@ import {
 } from "react-router-dom";
 
 import "./index.css";
-import { HomeWithEffect, HomeWithSuspense } from "./components/Home";
+import { HomeWithEffect, HomeWithEffect2, HomeWithSuspense, HomeWithSuspense2 } from "./components/Home";
 
 let router = createBrowserRouter([
   {
@@ -19,7 +19,19 @@ let router = createBrowserRouter([
     Component() {
       return <HomeWithEffect />
     }
-  }
+  },
+  {
+    path: "/suspense2",
+    Component() {
+      return <HomeWithSuspense2 />
+    }
+  },
+  {
+    path: "/effect2",
+    Component() {
+      return <HomeWithEffect2 />
+    }
+  },
 ]);
 
 export default function App() {
