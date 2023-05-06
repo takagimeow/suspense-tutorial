@@ -23,6 +23,10 @@ export function HomeWithEffect() {
     })();
   }, []);
 
+  if (loading) {
+    return <h2>Loading...</h2>
+  }
+
   return (
     <>
       <Articles3 loading={loading} />
@@ -49,6 +53,10 @@ export function HomeWithEffect2() {
       setData(data);
     })();
   }, []);
+
+  if (!data) {
+    return <h2>Loading...</h2>
+  }
 
   return (
     <>
