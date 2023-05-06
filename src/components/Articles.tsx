@@ -25,14 +25,14 @@ export function fetchData(url: string): Promise<any> {
 }
 
 export function Articles1() {
-  use<Awaited<ReturnType<typeof fetchData>>>(fetchData('https://run.mocky.io/v3/d6ac91ac-6dab-4ff0-a08e-9348d7deed51'))
+  use<Awaited<ReturnType<typeof fetchData>>>(fetchData(article1Url))
   return (
     <h1>Loaded 1</h1>
   )
 }
 
 export function Articles2() {
-  use<Awaited<ReturnType<typeof fetchData>>>(fetchData('https://run.mocky.io/v3/8a33e687-bc2f-41ea-b23d-3bc2fb452ead'))
+  use<Awaited<ReturnType<typeof fetchData>>>(fetchData(article2Url))
   return (
     <h1>Loaded 2</h1>
   )
@@ -51,7 +51,7 @@ export function Articles4() {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     (async () => {
-      await fetchData('https://run.mocky.io/v3/8a33e687-bc2f-41ea-b23d-3bc2fb452ead');
+      await fetchData(article1Url);
       setLoading(false);
     })();
   }, []);
