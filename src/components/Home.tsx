@@ -18,7 +18,7 @@ export function HomeWithEffect() {
 
   useEffect(() => {
     (async () => {
-      await fetchData('https://run.mocky.io/v3/d6ac91ac-6dab-4ff0-a08e-9348d7deed51');
+      await fetchData(articlesUrl);
       setLoading(false);
     })();
   }, []);
