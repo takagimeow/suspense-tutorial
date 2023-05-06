@@ -5,11 +5,17 @@ import {
 } from "react-router-dom";
 
 import "./index.css";
-import { HomeWithEffect, HomeWithEffect2, HomeWithSuspense, HomeWithSuspense2 } from "./components/Home";
+import { Home, HomeWithEffect, HomeWithEffect2, HomeWithSuspense, HomeWithSuspense2 } from "./components/Home";
 
 let router = createBrowserRouter([
   {
     path: "/",
+    Component() {
+      return <Home />
+    },
+  },
+  {
+    path: "/suspense",
     Component() {
       return <HomeWithSuspense />
     },
