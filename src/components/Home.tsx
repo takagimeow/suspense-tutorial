@@ -1,5 +1,25 @@
 import React, { Suspense, useEffect, useState } from "react";
 import { Articles1, Articles2, Articles3, Articles4, Articles5, Articles6, articlesUrl, fetchData } from "./Articles";
+import { Link } from "react-router-dom";
+
+export function Home() {
+  return (
+    <ul>
+      <li>
+        <Link to="/suspense">{"2つの<Suspense>を配置した例"}</Link>
+      </li>
+      <li>
+        <Link to="/effect">{"useEffect()を使った例"}</Link>
+      </li>
+      <li>
+        <Link to="/suspense2">{"<Articles>と<Artcile>と<Suspense>を使った例"}</Link>
+      </li>
+      <li>
+        <Link to="/effect2">{"<Articles>と<Artcile>とuseEffect()を使った例"}</Link>
+      </li>
+    </ul>
+  )
+}
 export function HomeWithSuspense() {
   return (
     <>
